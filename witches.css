@@ -1,0 +1,693 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+:root {
+  --dark-background-color: #170d06;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #D2B368;
+  --middle-light-text-color: #866027;
+  --light-text-color: #ac7b31;
+}
+
+body {
+  background-color: #101010;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  font-family: Sedan SC;
+}
+
+.navigation-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+}
+
+.navigation-link {
+  height:200px;
+  width:200px;
+  font-size:15px;
+  border: none;
+  margin:10px;
+  font-weight: bold;
+  color:rgba(255, 253, 240, 0.95);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#hex {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amor_Vincet_Omnia.jpg/800px-Amor_Vincet_Omnia.jpg");
+  background-size: 200px 280px;
+  background-position-y: center;
+}
+
+#tarot {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/44/The_Balance_of_the_Zodiac_by_Luis_Ricardo_Falero.jpg");
+  background-size: 200px 280px;
+  background-position-y: 10%;
+  background-position-x: center;
+}
+
+#journal {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Medusa_by_Carvaggio.jpg/800px-Medusa_by_Carvaggio.jpg");
+  background-size: 300px 300px;
+  background-position-y: center;
+  background-position-x: center;
+}
+
+#smth {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/GENTILESCHI_Judith.jpg/800px-GENTILESCHI_Judith.jpg");
+  background-size: 200px 280px;
+  background-position-y: center;
+}
+
+#community {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/GOYA_-_El_aquelarre_%28Museo_L%C3%A1zaro_Galdiano%2C_Madrid%2C_1797-98%29.jpg/800px-GOYA_-_El_aquelarre_%28Museo_L%C3%A1zaro_Galdiano%2C_Madrid%2C_1797-98%29.jpg");
+  background-size: 200px 280px;
+  background-position-y: center;
+}
+
+#about {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/79/Witches_going_to_their_Sabbath%2C_by_Luis_Ricardo_Falero.jpg");
+  background-size: 200px 280px;
+  background-position-y: center;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:active {
+  opacity: 0.3;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.hexes-container {
+  background-color:var(--dark-background-color);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 10%;
+  justify-items: center;
+  background-color:var(--dark-background-color);
+  height: 112px;
+  color: var(--light-color);
+}
+
+.back-to-home-page-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.back-to-home-page-button{
+  border: 3px solid var(--light-color);
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  height: fit-content;
+  width: 100px;
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.title-question-hex{
+  color:var(--light-color);
+  font-size: 40px;
+}
+
+.under-title{
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 112px);
+}
+
+.just-hexing-img {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/GENTILESCHI_Judith.jpg/800px-GENTILESCHI_Judith.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.just-hexing {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  width: 50%;
+}
+
+.hex-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  color:var(--light-color);
+}
+
+.legal-consequences-img {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/GENTILESCHI_Judith.jpg/800px-GENTILESCHI_Judith.jpg");
+  background-size: cover;
+  background-position-x: 90%;
+  width: 100%;
+  height: 100%;
+}
+
+.legal-consequences{
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  width: 50%;
+}
+
+.ask-for-therapy-button{
+  height:140px;
+  width:140px;
+  font-size:12px;
+  border: none;
+  margin:10px;
+  font-weight: bold;
+  color:rgba(255, 253, 240, 0.95);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/thumb/3/38/Judith_Beheading_Holofernes_by_Caravaggio.jpg/800px-Judith_Beheading_Holofernes_by_Caravaggio.jpg?resize=336%2C246");
+  background-size: 250px 200px;
+  background-position-x: 75%;
+}
+
+.journal-container{
+  background-color: #170d06;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.media-container{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+
+  @media screen and (max-width: 1100px) {
+    grid-template-columns: repeat(5, 1fr);
+    
+  }
+
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+    
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.media-link {
+  height:140px;
+  width:140px;
+  font-size:12px;
+  border: none;
+  margin:10px;
+  font-weight: bold;
+  color:rgba(255, 253, 240, 0.95);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.fact-check-link{
+  color: #D2B368;
+  font-size: 30px;
+  text-decoration: none;
+  margin: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.legal-consequences-question{
+  display: grid;
+  grid-template-columns: 1fr 20%;
+  justify-content: left;
+  padding: 20px;
+  text-align: center;
+  color: #D2B368;
+  font-size: 30px;
+  font-weight: bold;
+  width: 100%;
+  font-family: "Jacquard 24";
+}
+
+.legal-consequences-button{
+  height: 40px;
+  width: 100px;
+  background-color: #101010;
+  color: antiquewhite;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  align-items: center;
+  text-align: center;
+  border: antiquewhite solid;
+  border-radius: 5px;
+  margin:5px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.hexing-container{
+  background-color: var(--dark-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.how-to-hex-container{
+  display: grid;
+  grid-template-columns: 1fr 20%;
+  height: 20%;
+  background-color: var(--dark-background-color);
+  color: var(--light-color);
+  padding: 15px;
+  border-color: var(--light-color);
+  border: 3px solid;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.link-in-text-dark{
+  color: var(--light-text-color);
+  text-decoration: none;
+}
+
+.ask-for-therapy-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recipe-for-hex-container{
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  color: var(--light-text-color);
+}
+
+.igridients{
+  border-right: var(--middle-light-text-color) solid 3px;
+  padding: 20px;
+}
+
+.preparation-box{
+  padding: 30px;
+}
+
+#do-you-need-psychologic-help{
+  background-image: url("https://www.vogue.pl/uploads/repository/00_inne/gettyimages-148278692.jpg") ;
+  background-size: 1000px 1000px;
+  background-position-y: center;
+  color: #101010;
+}
+
+#do-you-need-lawyer-help{
+  background-image: url("https://data.ukiyo-e.org/mfa/images/sc130565.jpg") ;
+  background-size: 1300px 800px;
+  background-position-y: 70%;
+  background-position-x: center;
+  color: #101010;
+}
+
+#do-you-need-report-violence{
+  background-image: url("https://images.cdn.yle.fi/image/upload/ar_0.8231884241104126,c_fill,g_faces,h_772,w_636/dpr_2.0/q_auto:eco/f_auto/fl_lossy/13-3-8603817");
+  background-size: 1400px 1600px;
+  background-position-y: 60%;
+  color: #101010;
+}
+
+#do-you-need-sti-check{
+  background-image: url("https://images.cdn.yle.fi/image/upload/ar_2.2831051349639893,c_fill,g_faces,h_525,w_1200/dpr_2.0/q_auto:eco/f_auto/fl_lossy/13-3-8603818");
+  background-size: 1400px 500px;
+  background-position-y: 90%;
+  color: #101010;
+}
+
+#do-you-need-abortion{
+  background-image: url("https://cdn.citywonders.com/media/12876/borghese-gallery-header.jpg?anchor=center&mode=crop&width=1024&height=760&rnd=131244798810000000");
+  background-size: 1400px 900px;
+  background-position-y: 70%;
+  color: #101010;
+}
+
+.check-here-button{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title-container-abortion{
+  color:var(--light-color);
+  font-family: Sedan SC;
+  display: grid;
+  grid-template-columns: 1fr 10%;
+  justify-items: center;
+  padding: 30px;
+  width: 100%;
+  height: 112px;
+}
+
+.abortion-instruction{
+  color: var(--middle-light-text-color);
+  padding: 20px;
+}
+
+.under-title-abortion{
+  display: grid;
+  grid-template-columns: 1fr 25%;
+  min-height: calc(100vh - 112px);
+}
+
+.link-in-text{
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.list-of-hygiene-products-container{
+  background-color: var(--dark-background-color);
+  color: var(--light-color);
+  padding: 15px;
+  border-color: var(--light-color);
+  border: 3px solid;
+  margin: 15px;
+  border-radius: 10px;
+  width: 70%;
+}
+
+.abortion-pills{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+#mifeimizo{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bd/Self-portrait_as_the_Sick_Bacchus_by_Caravaggio.jpg");
+  background-size: 160px 180px;
+  background-position: center;
+}
+
+#onlymizo{
+  background-image: url("https://www.sothebysinstitute.com/wp-content/uploads/2021/04/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit-1024x786.jpeg");
+  background-size: 200px 150px;
+  background-position: center;
+}
+
+.links-to-ngos{
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#adt{
+  background-image: url("https://static.myvimu.com/photo/57/36195723.jpg");
+  background-size: 160px 200px;
+  background-position: center;
+}
+
+#awb {
+  background-image: url("https://www.thisiscolossal.com/wp-content/uploads/2019/12/okamura-2.jpg");
+  background-size: 200px 270px;
+  background-position-y: 40%;
+}
+
+#whw {
+  background-image: url("https://www.judaica-art.com/modules/tetbanner/images/f7193d6a08ce5a91355deeac7edc8e42.jpg") ;
+  background-size: 160px 180px;
+  background-position: center;
+}
+
+#ana {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Medusa_by_Carvaggio.jpg/800px-Medusa_by_Carvaggio.jpg");
+  background-size: 220px 220px;
+  background-position: center;
+}
+
+.abortion-pills-link {
+  height:140px;
+  width:140px;
+  font-size:12px;
+  border: none;
+  margin:30px;
+  font-weight: bold;
+  color:rgba(255, 253, 240, 0.95);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#ajplus{
+  background-image: url("https://images.cdn.yle.fi/image/upload/ar_1.5414258241653442,c_fill,g_faces,h_412,w_636/dpr_2.0/q_auto:eco/f_auto/fl_lossy/13-3-8603839");
+  background-size: 270px 200px;
+  background-position: center;
+}
+
+#aljazeera{
+  background-image: url("https://www.artnews.com/wp-content/uploads/2020/04/5850813hm.jpg?resize=400,521");
+  background-size: 200px 250px;
+  background-position: center;
+}
+
+#africadirect{
+  background-image: url("https://ik.imagekit.io/theartling/prod/tr:bg-F3F0EC,cm-pad_resize,w-950,h-950/products/Product/f34af4f76aed4059b5419e9ca9c296c1_sw-1824_sh-1250.png");
+  background-size: 270px 220px;
+  background-position: center;
+}
+
+#africanstream{
+  background-image: url("https://www.thisiscolossal.com/wp-content/uploads/2019/12/okamura-1.jpg");
+  background-size: 180px 220px;
+  background-position-y: 60%;
+}
+
+#wionews{
+  background-image: url("https://shop.gaatha.com/image/catalog/1-Category%20images/blog/mata-ne-pachedi.jpg");
+  background-size: 180px 150px;
+  background-position: center;
+}
+
+#workingclasshistory{
+  background-image: url("https://socialistvoice.ie/wp-content/uploads/2019/06/gustave_courbet_stonebreakers-990x500.jpeg");
+  background-size: 200px 150px;
+  background-position-x: 60%;
+}
+
+#reactionary{
+  background-image: url("https://miro.medium.com/v2/resize:fit:1100/format:webp/1*hxKwvPtv7RhPSTwC3L4GWw.jpeg");
+  background-size: 170px 150px;
+  background-position: center;
+}
+
+#progressive{
+  background-image: url("https://s3-eu-central-1.amazonaws.com/cartoons-s3/styles/product_detail_image/s3/8025D3A9-9803-4A87-B939-799B6C195D76.jpeg?itok=vtS11cyK");
+  background-size: 150px 200px;
+  background-position: center;
+}
+
+#rescueorg{
+  background-image: url("https://www.sothebysinstitute.com/wp-content/uploads/2021/04/John_William_Waterhouse_-_The_Lady_of_Shalott_-_Google_Art_Project_edit-1024x786.jpeg");
+  background-size: 200px 150px;
+  background-position: center;
+}
+
+#impact{
+  background-image: url("https://www.archives.gov/files/research/african-art/images/129-lg.jpg") ;
+  background-size: 180px 150px;
+  background-position-x: 80%;
+}
+
+#theredstream{
+  background-image: url("https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/thumb/3/38/Judith_Beheading_Holofernes_by_Caravaggio.jpg/800px-Judith_Beheading_Holofernes_by_Caravaggio.jpg?resize=336%2C246");
+  background-size: 250px 200px;
+  background-position-x: 75%;
+}
+
+#decolonizd{
+  background-image: url("https://i.etsystatic.com/28001992/r/il/a0b431/5524884351/il_570xN.5524884351_ghhf.jpg");
+  background-size: 220px 240px;
+  background-position: center;
+}
+
+#decolonizemyself{
+  background-image: url("https://www.singulart.com/blog/wp-content/uploads/2023/12/Narcissus-1140x1380.jpg");
+  background-size: 160px 180px;
+  background-position: center;
+}
+
+#sankara{
+  background-image: url("https://www.thisiscolossal.com/wp-content/uploads/2019/12/okamura-2.jpg");
+  background-size: 200px 270px;
+  background-position-y: 40%;
+}
+
+#visualizingpalestine{
+  background-image: url("https://static.frieze.com/files/inline-images/landgettyimages-1052757074.jpeg") ;
+  background-size: 200px 160px;
+  background-position: center;
+}
+
+#environment{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/bd/Self-portrait_as_the_Sick_Bacchus_by_Caravaggio.jpg");
+  background-size: 160px 180px;
+  background-position: center;
+}
+
+#jewishsocialist{
+  background-image: url("https://www.judaica-art.com/modules/tetbanner/images/f7193d6a08ce5a91355deeac7edc8e42.jpg") ;
+  background-size: 160px 180px;
+  background-position: center;
+}
+
+#jewishcurrents{
+  background-image: url("https://www.artelino.com/auctionimages/articles/gustav-klimt-judith-large.jpg");
+  background-size: 140px 220px;
+  background-position-y: 20%;
+}
+
+#sambentley{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Amor_Vincet_Omnia.jpg/800px-Amor_Vincet_Omnia.jpg");
+  background-size: 200px 220px;
+  background-position-x: center;
+  background-position-y: 30%;
+}
+
+#scottduncan{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Medusa_by_Carvaggio.jpg/800px-Medusa_by_Carvaggio.jpg");
+  background-size: 220px 220px;
+  background-position: center;
+}
+
+#myriamfrancois{
+  background-image: url("https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/1621893054378-I86G3NSQI8OLQ2U59KVS/fascinating-video-explores-hokusais-iconic-painting-the-great-wave-off-kanagawa.jpg");
+  background-size: 250px 180px;
+  background-position: center;
+}
+
+#ukraine{
+  background-image: url("https://www.ukrainianlessons.com/wp-content/uploads/2023/03/800px-Mykola_Pymonenko-Vorozhinnia.jpg");
+  background-size: 160px 210px;
+  background-position: center;
+}
+
+#motazazaiza{
+  background-image: url("https://thenational-the-national-prod.cdn.arcpublishing.com/resizer/v2/4FGOSM27XI64DO7LE7QRIE3FX4.jpg?smart=true&auth=c9131086f9c47021459a5c410d7ae9c1390e2c9144c0b39efa0874ab366738bb&width=800&height=940");
+  background-size: 200px 250px;
+  background-position: center;
+}
+
+#oko{
+  background-image: url("https://preview.redd.it/gwwgu49jzel41.jpg?auto=webp&s=8d7c8e2e010c18defb69bbb68fdb75981bc32310");
+  background-size: 180px 220px;
+  background-position: center;
+  background-position-y: 20%;
+}
+
+.how-to-fact-check-article{
+  color:var(--light-text-color);
+  padding: 30px;
+  background-color: var(--dark-background-color);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.fact-check-list{
+  border: var(--light-text-color) 3px solid;
+  border-radius: 5px;
+  padding: 40px;
+  width: 1000px;
+}
+
+.article-build-community {
+  height: 300px;
+  width: 350px;
+  border: 3px solid var(--light-color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.link-to-article{
+  padding: 0 10px 0 10px;
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+.title-container-under-article{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 10%;
+  justify-items: center;
+  height: 112px;
+  color: var(--light-color);
+}
